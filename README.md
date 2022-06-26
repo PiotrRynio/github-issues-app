@@ -9,4 +9,5 @@
 
 Project rules:
 
-- [Css order](https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/)
+- [css order](https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/)
+- [commit notation](https://gist.github.com/brianclements/841ea7bffdb01346392c#type)
