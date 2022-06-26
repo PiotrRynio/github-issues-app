@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from 'assets/images/logo/logo.svg';
 import { MainContent, Wrapper } from './App.styles';
-import { ExampleComponent } from 'components/ExampleComponent';
 
 const App = () => {
   return (
@@ -15,9 +14,7 @@ const App = () => {
           Learn React
         </a>
       </header>
-      <MainContent>
-        <ExampleComponent />
-      </MainContent>
+      <MainContent />
     </Wrapper>
   );
 };
