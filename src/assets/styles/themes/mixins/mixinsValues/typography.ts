@@ -16,7 +16,7 @@ export const typography: Typography = {
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   body2: css`
-    color: ${({ theme }) => theme.colors.primaryText};
+    color: ${({ theme }) => theme.colors.secondaryText};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   small: css`
@@ -24,11 +24,11 @@ export const typography: Typography = {
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   itemTitle: css`
-    color: ${({ theme }) => theme.colors.primaryText};
+    color: ${({ theme }) => theme.colors.linkText};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   title: css`
-    color: ${({ theme }) => theme.colors.primaryText};
+    color: ${({ theme }) => theme.colors.secondaryText};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   subtitle: css`
@@ -36,7 +36,7 @@ export const typography: Typography = {
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
   pagination: css`
-    color: ${({ theme }) => theme.colors.primaryText};
+    color: ${({ theme }) => theme.colors.linkText};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   `,
 };

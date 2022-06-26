@@ -6,7 +6,7 @@ export type Colors = {
   linkText: string;
 
   separatorLine: string;
-  headerSearcher: string;
+  searcher: string;
 
   disabled: string;
   background: string;
@@ -22,7 +22,7 @@ export const colors: Colors = {
   linkText: '#166CD7',
 
   separatorLine: '#C4C4C4',
-  headerSearcher: '#D0D7DE',
+  searcher: '#D0D7DE',
 
   disabled: '#8D959F',
   background: '#fff',
