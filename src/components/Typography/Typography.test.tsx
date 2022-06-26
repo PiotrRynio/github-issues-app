@@ -30,7 +30,7 @@ describe(`<Typography>`, () => {
 
   it('renders ItemTitle typography correctly', () => {
     // when
-    render(<Typography variant="ItemTitle">{exampleText}</Typography>);
+    render(<Typography variant="itemTitle">{exampleText}</Typography>);
 
     // then
     screen.getByRole('heading', { name: /Example text/i, level: 3 });
@@ -38,14 +38,14 @@ describe(`<Typography>`, () => {
 
   it('renders Title typography correctly', () => {
     // when
-    render(<Typography variant="Title">{exampleText}</Typography>);
+    render(<Typography variant="title">{exampleText}</Typography>);
 
     // then
     screen.getByRole('heading', { name: /Example text/i, level: 2 });
   });
   it('renders Subtitle typography correctly', () => {
     // when
-    render(<Typography variant="Subtitle">{exampleText}</Typography>);
+    render(<Typography variant="subtitle">{exampleText}</Typography>);
 
     // then
     screen.getByRole('heading', { name: /Example text/i, level: 4 });
@@ -53,7 +53,7 @@ describe(`<Typography>`, () => {
 
   it('renders Pagination typography correctly', () => {
     // when
-    render(<Typography variant="Pagination">{exampleText}</Typography>);
+    render(<Typography variant="pagination">{exampleText}</Typography>);
 
     // then
     screen.getByText(/Example text/i);

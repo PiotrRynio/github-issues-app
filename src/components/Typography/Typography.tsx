@@ -1,30 +1,35 @@
 import React, { ReactNode } from 'react';
+import {
+  Body1Typography,
+  Body2Typography,
+  ItemTitleTypography,
+  PaginationTypography,
+  SmallTypography,
+  SubtitleTypography,
+  TitleTypography,
+} from './Typography.styles';
 
-type TypographyVariant = 'body1' | 'body2' | 'small' | 'ItemTitle' | 'Title' | 'Subtitle' | 'Pagination';
+type TypographyVariant = 'body1' | 'body2' | 'small' | 'itemTitle' | 'title' | 'subtitle' | 'pagination';
 
 type TypographyProps = {
   children: ReactNode;
   variant: TypographyVariant;
 };
 
-export const Typography = ({ children, variant }: TypographyProps) => {
-  const renderVariant = () => {
-    switch (variant as TypographyVariant) {
-      case 'body1':
-        return <p>{children}</p>;
-      case 'body2':
-        return <p>{children}</p>;
-      case 'small':
-        return <p>{children}</p>;
-      case 'ItemTitle':
-        return <h3>{children}</h3>;
-      case 'Title':
-        return <h2>{children}</h2>;
-      case 'Subtitle':
-        return <h4>{children}</h4>;
-      case 'Pagination':
-        return <span>{children}</span>;
-    }
-  };
-  return renderVariant();
+export const Typography = (props: TypographyProps) => {
+  const TypographyVariant = TYPOGRAPHY_VARIANT_MAP[props.variant];
+
+  return <TypographyVariant {...props} />;
+};
+
+const TYPOGRAPHY_VARIANT_MAP: {
+  [id: string]: (props: TypographyProps) => JSX.Element;
+} = {
+  body1: Body1Typography,
+  body2: Body2Typography,
+  small: SmallTypography,
+  itemTitle: ItemTitleTypography,
+  title: TitleTypography,
+  subtitle: SubtitleTypography,
+  pagination: PaginationTypography,
 };
