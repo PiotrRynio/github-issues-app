@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 import { AllAppProviders } from 'providers/AllAppProviders';
 
 const AllTheProviders = ({ children }: { children: ReactNode }) => {
