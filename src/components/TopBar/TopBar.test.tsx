@@ -2,7 +2,7 @@ import { render, screen } from 'test-utils';
 import { TopBar } from './TopBar';
 
 describe(`<TopBar>`, () => {
-  test('renders top bar correctly', () => {
+  it('renders top bar correctly', () => {
     // when
     render(<TopBar />);
 

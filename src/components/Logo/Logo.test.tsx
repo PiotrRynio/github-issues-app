@@ -2,7 +2,7 @@ import { render, screen } from 'test-utils';
 import { Logo } from './Logo';
 
 describe(`<Logo>`, () => {
-  test('renders logo ', () => {
+  it('renders logo ', () => {
     // when
     render(<Logo />);
 
