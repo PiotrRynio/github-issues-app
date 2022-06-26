@@ -1,25 +1,31 @@
 export type Colors = {
   primary: string;
-  secondary: string;
-  regularText: string;
-  activePrimary: string;
-  hoverPrimary: string;
-  activeSecondary: string;
-  hoverSecondary: string;
+
+  primaryText: string;
+  secondaryText: string;
+  linkText: string;
+
+  separatorLine: string;
+  headerSearcher: string;
+
   disabled: string;
-  doneTaskBackground: string;
+  background: string;
+
   transparent: string;
 };
 
 export const colors: Colors = {
-  primary: '#4eadc5',
-  secondary: '#648bb2',
-  regularText: '#000',
-  activePrimary: '#0082a3',
-  hoverPrimary: '#20f7e9',
-  activeSecondary: '#EDF5E1',
-  hoverSecondary: '#8EE4AF',
-  disabled: '#ededed',
-  doneTaskBackground: '#eee',
+  primary: '#24292F',
+
+  primaryText: '#24292F',
+  secondaryText: '#6F7781',
+  linkText: '#166CD7',
+
+  separatorLine: '#C4C4C4',
+  headerSearcher: '#D0D7DE',
+
+  disabled: '#8D959F',
+  background: '#fff',
+
   transparent: 'transparent',
 };

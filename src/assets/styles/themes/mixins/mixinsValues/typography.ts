@@ -8,7 +8,7 @@ export type Typography = {
 
 export const typography: Typography = {
   regular: css`
-    color: ${() => colors.regularText};
+    color: ${() => colors.primaryText};
     font-family: ${() => fontFamilies.primary};
   `,
 };
