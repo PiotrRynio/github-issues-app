@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+coverage
+node_modules
+
+# Ignore all HTML files:
+*.html
+
+# dependencies
+/.pnp
+.pnp.js
+package-lock.json
