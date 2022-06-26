@@ -1,17 +1,18 @@
-import React from 'react';
-import { MainSection, Wrapper } from './App.styles';
+import { Route, Routes } from 'react-router-dom';
 import { TopBar } from 'components';
+import { Results, User } from 'views';
+import { MainSection, Wrapper } from './App.styles';
 
-const App = () => {
+export const App = () => {
   return (
     <Wrapper>
       <TopBar />
       <MainSection>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
+        <Routes>
+          <Route path="/" element={<Results />} />
+          <Route path="user" element={<User />} />
+        </Routes>
       </MainSection>
     </Wrapper>
   );
 };
-
-export default App;
