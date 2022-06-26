@@ -5,8 +5,7 @@ import { Helmet } from 'react-helmet';
 import { theme } from 'assets/styles';
 import { GlobalStyles } from 'assets/styles';
 import { usePageTitle } from 'hooks/usePageTitle';
-import { PageTitleProvider } from './appProviders';
-import { AppContextProvider } from './appProviders';
+import { PageTitleProvider, AppContextProvider } from './appProviders';
 
 const queryClient = new QueryClient();
 
