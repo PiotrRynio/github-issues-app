@@ -17,8 +17,8 @@ export type Colors = {
 export const colors: Colors = {
   primary: '#24292F',
 
-  primaryText: '#24292F',
-  secondaryText: '#6F7781',
+  primaryText: '#6F7781',
+  secondaryText: '#24292F',
   linkText: '#166CD7',
 
   separatorLine: '#C4C4C4',
