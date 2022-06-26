@@ -5,8 +5,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 100vh;
 `;
 
-export const MainContent = styled.section``;
+export const Content = styled.section``;

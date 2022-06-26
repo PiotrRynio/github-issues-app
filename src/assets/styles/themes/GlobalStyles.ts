@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { Theme, theme } from './theme';
+import { Theme } from './theme';
 
 interface GlobalStylesProps {
   theme: Theme;
@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   } 
   
   body {
-    font-family: ${() => theme.fontFamilies.primary};
+    font-family: ${({ theme }) => theme.fontFamilies.primary};
   }
   
   ::-webkit-scrollbar {

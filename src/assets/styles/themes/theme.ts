@@ -1,9 +1,18 @@
-import { Mixins, mixins } from './mixins';
-import { Breakpoints, breakpoints } from './themeValues';
-import { Colors, colors } from './themeValues';
-import { fontFamilies, FontFamilies } from './themeValues';
-import { fontSize, FontSize } from './themeValues';
-import { fontWeight, FontWeight } from './themeValues';
+import { mixins, Mixins } from './mixins';
+import {
+  breakpoints,
+  Breakpoints,
+  colors,
+  Colors,
+  fontFamilies,
+  FontFamilies,
+  fontSize,
+  FontSize,
+  fontWeight,
+  FontWeight,
+  sizes,
+  Sizes,
+} from './themeValues';
 
 export type Theme = {
   breakpoints: Breakpoints;
@@ -12,6 +21,7 @@ export type Theme = {
   fontSize: FontSize;
   fontWeight: FontWeight;
   mixins: Mixins;
+  sizes: Sizes;
 };
 
 export const theme: Theme = {
@@ -21,4 +31,5 @@ export const theme: Theme = {
   fontSize,
   fontWeight,
   mixins,
+  sizes,
 };
