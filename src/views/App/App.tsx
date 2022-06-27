@@ -10,7 +10,7 @@ export const App = () => {
       <MainSection>
         <Routes>
           <Route path="/" element={<Results />} />
-          <Route path="user" element={<User />} />
+          <Route path="users/:githubUserLogin" element={<User />} />
         </Routes>
       </MainSection>
     </Wrapper>
