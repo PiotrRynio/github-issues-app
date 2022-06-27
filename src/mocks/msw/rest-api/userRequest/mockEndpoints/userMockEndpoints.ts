@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 import { server } from 'mocks/msw/rest-api/server';
 import { REST_API_URL, USERS_PATH } from 'constants/restApiPaths';
-import { UserDto } from '../../../../../types/UserDto';
+import { UserDto } from 'types/dtos/UserDto';
 
-export const getExampleWillReturn = (exampleResponse: UserDto) => {
+export const getUserWillReturn = (exampleResponse: UserDto) => {
   server.use(
     rest.get(`${REST_API_URL}${USERS_PATH}`, (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(exampleResponse));
@@ -11,7 +11,7 @@ export const getExampleWillReturn = (exampleResponse: UserDto) => {
   );
 };
 
-export const getExampleIsLoading = () => {
+export const getUserIsLoading = () => {
   server.use(
     rest.get(`${REST_API_URL}${USERS_PATH}`, (req, res, ctx) => {
       return res(ctx.delay('infinite'));
@@ -19,7 +19,7 @@ export const getExampleIsLoading = () => {
   );
 };
 
-export const getExampleWillReturnFail = () => {
+export const getUserWillReturnFail = () => {
   server.use(
     rest.get(`${REST_API_URL}${USERS_PATH}`, (req, res, ctx) => {
       return res(ctx.status(404));

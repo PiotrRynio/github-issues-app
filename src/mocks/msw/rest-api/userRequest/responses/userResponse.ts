@@ -1,4 +1,4 @@
-import { UserDto } from 'types/UserDto';
+import { UserDto } from 'types/dtos/UserDto';
 
 // 20220627154721
 // https://api.github.com/users/defunkt
