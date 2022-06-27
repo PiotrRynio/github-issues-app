@@ -6,10 +6,10 @@ import {
   Colors,
   fontFamilies,
   FontFamilies,
-  fontSize,
-  FontSize,
-  fontWeight,
-  FontWeight,
+  fontSizes,
+  FontSizes,
+  fontWeights,
+  FontWeights,
   sizes,
   Sizes,
 } from './themeValues';
@@ -18,8 +18,8 @@ export type Theme = {
   breakpoints: Breakpoints;
   colors: Colors;
   fontFamilies: FontFamilies;
-  fontSize: FontSize;
-  fontWeight: FontWeight;
+  fontSize: FontSizes;
+  fontWeight: FontWeights;
   mixins: Mixins;
   sizes: Sizes;
 };
@@ -28,8 +28,8 @@ export const theme: Theme = {
   breakpoints,
   colors,
   fontFamilies,
-  fontSize,
-  fontWeight,
+  fontSize: fontSizes,
+  fontWeight: fontWeights,
   mixins,
   sizes,
 };

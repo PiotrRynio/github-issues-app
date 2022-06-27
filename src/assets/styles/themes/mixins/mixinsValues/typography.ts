@@ -12,8 +12,8 @@ export type Typography = {
 
 export const typography: Typography = {
   body1: css`
-    color: ${({ theme }) => theme.colors.primaryText};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
+    color: ${({ theme }) => theme.colors.primaryText};
   `,
   body2: css`
     color: ${({ theme }) => theme.colors.secondaryText};
