@@ -1,3 +1,3 @@
-export const REST_API_URL = '/rest-api';
+export const REST_API_URL = 'https://api.github.com';
 
-export const EXAMPLES_PATH = '/examples';
+export const USERS_PATH = '/users';
