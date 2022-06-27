@@ -2,9 +2,8 @@ import React, { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { theme } from 'assets/styles';
-import { GlobalStyles } from 'assets/styles';
-import { usePageTitle } from 'hooks/usePageTitle';
+import { GlobalStyles, theme } from 'assets/styles';
+import { usePageTitle } from 'hooks/usePageTitle/usePageTitle';
 import { PageTitleProvider, AppContextProvider } from './appProviders';
 
 const queryClient = new QueryClient();
