@@ -1,11 +1,31 @@
-import { useQuery } from 'react-query';
+import { useQuery, UseQueryResult } from 'react-query';
+import parseLinkHeader from 'parse-link-header';
 import { REST_API_URL, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto } from 'types/dtos';
 
-export const useGithubUser = (githubUserLogin: string) =>
+export const useGithubUser = (
+  githubUserLogin: string,
+): UseQueryResult<{
+  exampleData: any;
+}> =>
   useQuery([`useUser-${githubUserLogin}`], async () => {
     const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`);
-    const userData: UserDto = await userResponse.json();
+    const userDto: UserDto = await userResponse.json();
 
-    return { data: userData };
+    const starsResponse = await fetch(`https://api.github.com/users/${githubUserLogin}/starred?per_page=1`);
+    console.log('*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*');
+    const linkHeader = starsResponse.headers.get('Link');
+    const parsedLinkHeader = parseLinkHeader(linkHeader);
+    const starsNumber = Number(parsedLinkHeader?.last.page);
+
+    const userData = {
+      id: userDto.id,
+      login: userDto.login,
+      name: userDto.name,
+      followersNumber: userDto.followers,
+      followingNumber: userDto.following,
+      starsNumber,
+    };
+
+    return { ...userData };
   });

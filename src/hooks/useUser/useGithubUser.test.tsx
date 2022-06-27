@@ -41,7 +41,7 @@ describe('Hook useGithubUser', () => {
   test('should return correct data, if it finish with success', async () => {
     // given
     const correctGithubUser = {
-      id: 1,
+      id: 2,
       login: 'defunkt',
       name: 'Chris Wanstrath',
       followersNumber: 21454,
