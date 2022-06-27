@@ -1,4 +1,5 @@
 import { UserDto } from 'types/dtos/UserDto';
+import exampleUserAvatar from '../images/example-user-avatar-1.jpg';
 
 // 20220627154721
 // https://api.github.com/users/defunkt
@@ -7,7 +8,7 @@ export const userResponse: UserDto = {
   login: 'defunkt',
   id: 2,
   node_id: 'MDQ6VXNlcjI=',
-  avatar_url: 'https://avatars.githubusercontent.com/u/2?v=4',
+  avatar_url: exampleUserAvatar,
   gravatar_id: '',
   url: 'https://api.github.com/users/defunkt',
   html_url: 'https://github.com/defunkt',

@@ -2,6 +2,7 @@ import { renderHook } from 'test-utils';
 import { userResponse } from 'mocks/msw/rest-api/userRequest/responses/userResponse';
 import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequest/mockEndpoints/userMockEndpoints';
 import { useGithubUser } from './useGithubUser';
+import exampleUserAvatar from 'mocks/msw/rest-api/userRequest/images/example-user-avatar-1.jpg';
 
 describe('Hook useGithubUser', () => {
   const testGithubUserLogin = 'defunkt';
@@ -47,7 +48,7 @@ describe('Hook useGithubUser', () => {
       followersNumber: 21454,
       followingNumber: 210,
       starsNumber: 551,
-      avatar: 'https://avatars.githubusercontent.com/u/2?v=4',
+      avatar: exampleUserAvatar,
     };
     getUserWillReturn(userResponse);
     const { result, waitFor } = await renderHook(() => useGithubUser(testGithubUserLogin));
