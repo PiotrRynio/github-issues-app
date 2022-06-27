@@ -4,8 +4,6 @@ import { REST_API_URL, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto } from 'types/dtos/UserDto';
 
 export const getUserWillReturn = (exampleResponse: UserDto) => {
-  console.log(`${REST_API_URL}${USERS_PATH}/:githubUserLogin`);
-
   server.use(
     rest.get(`${REST_API_URL}${USERS_PATH}/:githubUserLogin`, (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(exampleResponse));

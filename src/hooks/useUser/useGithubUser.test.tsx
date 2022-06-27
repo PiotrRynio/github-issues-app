@@ -3,6 +3,7 @@ import { userResponse } from 'mocks/msw/rest-api/userRequest/responses/userRespo
 import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequest/mockEndpoints/userMockEndpoints';
 import { useGithubUser } from './useGithubUser';
 import exampleUserAvatar from 'mocks/msw/rest-api/userRequest/images/example-user-avatar-1.jpg';
+import { getUserStarsHeaderWillReturn } from '../../mocks/msw/rest-api/userRequest/mockEndpoints/userStarsHeaderMockEndpoints';
 
 describe('Hook useGithubUser', () => {
   const testGithubUserLogin = 'defunkt';
@@ -51,6 +52,7 @@ describe('Hook useGithubUser', () => {
       avatar: exampleUserAvatar,
     };
     getUserWillReturn(userResponse);
+    getUserStarsHeaderWillReturn({ starsNumber: correctGithubUser.starsNumber });
     const { result, waitFor } = await renderHook(() => useGithubUser(testGithubUserLogin));
 
     // when

@@ -18,8 +18,7 @@ export const useGithubUser = (githubUserLogin: string): UseQueryResult<UseGithub
     const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`);
     const userDto: UserDto = await userResponse.json();
 
-    const starsResponse = await fetch(`https://api.github.com/users/${githubUserLogin}/starred?per_page=1`);
-    console.log('*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*');
+    const starsResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}/starred?per_page=1`);
     const linkHeader = starsResponse.headers.get('Link');
     const parsedLinkHeader = parseLinkHeader(linkHeader);
     const starsNumber = Number(parsedLinkHeader?.last.page);
