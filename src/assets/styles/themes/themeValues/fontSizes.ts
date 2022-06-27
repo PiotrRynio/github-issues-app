@@ -1,4 +1,4 @@
-export type FontSize = {
+export type FontSizes = {
   xs: string;
   sm: string;
   md: string;
@@ -6,7 +6,7 @@ export type FontSize = {
   xl: string;
 };
 
-export const fontSize: FontSize = {
+export const fontSizes: FontSizes = {
   xs: '12px',
   sm: '14px',
   md: '16px',

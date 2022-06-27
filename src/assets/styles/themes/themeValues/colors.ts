@@ -6,7 +6,7 @@ export type Colors = {
   linkText: string;
 
   separatorLine: string;
-  headerSearcher: string;
+  searcher: string;
 
   disabled: string;
   background: string;
@@ -17,12 +17,12 @@ export type Colors = {
 export const colors: Colors = {
   primary: '#24292F',
 
-  primaryText: '#24292F',
-  secondaryText: '#6F7781',
+  primaryText: '#6F7781',
+  secondaryText: '#24292F',
   linkText: '#166CD7',
 
   separatorLine: '#C4C4C4',
-  headerSearcher: '#D0D7DE',
+  searcher: '#D0D7DE',
 
   disabled: '#8D959F',
   background: '#fff',
