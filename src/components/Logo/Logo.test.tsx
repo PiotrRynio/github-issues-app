@@ -7,7 +7,7 @@ describe(`<Logo>`, () => {
     render(<Logo />);
 
     // then
-    const logo = screen.getByRole('img', { name: 'github logo' });
+    const logo = screen.getByRole('img', { name: /github logo/i });
     expect(logo).toBeInTheDocument();
   });
 });
