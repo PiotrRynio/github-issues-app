@@ -41,12 +41,13 @@ describe('Hook useGithubUser', () => {
   test('should return correct data, if it finish with success', async () => {
     // given
     const correctGithubUser = {
-      id: 2,
+      id: '2',
       login: 'defunkt',
       name: 'Chris Wanstrath',
       followersNumber: 21454,
       followingNumber: 210,
       starsNumber: 551,
+      avatar: 'https://avatars.githubusercontent.com/u/2?v=4',
     };
     getUserWillReturn(userResponse);
     const { result, waitFor } = await renderHook(() => useGithubUser(testGithubUserLogin));
