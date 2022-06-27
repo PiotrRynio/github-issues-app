@@ -7,6 +7,16 @@ import { getUserStarsHeaderWillReturn } from '../../mocks/msw/rest-api/userReque
 
 describe('Hook useGithubUser', () => {
   const testGithubUserLogin = 'defunkt';
+  const correctGithubUser = {
+    id: '2',
+    login: 'defunkt',
+    name: 'Chris Wanstrath',
+    followersNumber: 21454,
+    followingNumber: 210,
+    starsNumber: 551,
+    avatar: exampleUserAvatar,
+  };
+
   it(`should render hook`, async () => {
     // when
     renderHook(() => useGithubUser(testGithubUserLogin));
@@ -26,6 +36,7 @@ describe('Hook useGithubUser', () => {
   it('should be fetching data wih success, if you call hook', async () => {
     // given
     getUserWillReturn(userResponse);
+    getUserStarsHeaderWillReturn({ starsNumber: correctGithubUser.starsNumber });
 
     // when
     const { result, waitFor } = await renderHook(() => useGithubUser(testGithubUserLogin));
@@ -42,15 +53,6 @@ describe('Hook useGithubUser', () => {
 
   test('should return correct data, if it finish with success', async () => {
     // given
-    const correctGithubUser = {
-      id: '2',
-      login: 'defunkt',
-      name: 'Chris Wanstrath',
-      followersNumber: 21454,
-      followingNumber: 210,
-      starsNumber: 551,
-      avatar: exampleUserAvatar,
-    };
     getUserWillReturn(userResponse);
     getUserStarsHeaderWillReturn({ starsNumber: correctGithubUser.starsNumber });
     const { result, waitFor } = await renderHook(() => useGithubUser(testGithubUserLogin));
