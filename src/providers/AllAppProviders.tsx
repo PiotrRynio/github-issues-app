@@ -6,9 +6,8 @@ import { GlobalStyles, theme } from 'assets/styles';
 import { usePageTitle } from 'hooks/usePageTitle/usePageTitle';
 import { PageTitleProvider } from './appProviders';
 
-const queryClient = new QueryClient();
-
 export const AllAppProviders = ({ children }: { children: ReactNode }) => {
+  const queryClient = new QueryClient();
   const { pageTitle } = usePageTitle();
 
   return (

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react-hooks';
 import { MemoryRouter } from 'react-router-dom';
 import { AllAppProviders } from 'providers/AllAppProviders';
 
@@ -12,8 +12,8 @@ const AllTheProviders = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const customHookRender = (useHook: any) =>
-  renderHook(() => useHook(), {
+const customHookRender = (useHook: (props: { children: ReactNode }) => any) =>
+  renderHook(useHook, {
     wrapper: AllTheProviders,
   });
 
@@ -21,4 +21,4 @@ const customRender = (ui: any, options?: any) => render(ui, { wrapper: AllThePro
 
 export * from '@testing-library/react';
 
-export { customRender as render, customHookRender as renderHook };
+export { customRender as render, customHookRender as renderHook, act };
