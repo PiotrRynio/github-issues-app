@@ -57,7 +57,7 @@ export const typography: Typography = {
   subtitle: css<SubtitleProps>`
     font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: 32px;
-    font-weight: ${({ theme }) => theme.fontWeights.semiBold};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
     color: ${({ theme, isSecondaryColor }) =>
       isSecondaryColor ? theme.colors.secondaryText : theme.colors.primaryText};
