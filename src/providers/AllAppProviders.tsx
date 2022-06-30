@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { GlobalStyles, theme } from 'assets/styles';
+import { GlobalStyles, theme } from 'assets/styles/themes/primaryTheme';
 import { usePageTitle } from 'hooks/usePageTitle/usePageTitle';
 import { PageTitleProvider } from './appProviders';
 import { fontsPaths } from 'assets/styles';

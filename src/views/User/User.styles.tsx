@@ -24,10 +24,3 @@ export const TitlesContainer = styled.section`
   align-items: center;
   margin: 16px auto 13px;
 `;
-
-export const StatsContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 19px;
-`;

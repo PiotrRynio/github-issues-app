@@ -13,7 +13,7 @@ export const typographies: Typographies = {
 
   body2: {
     fontSize: fontSizes.sm,
-    lineHeight: fontSizes.md,
+    lineHeight: lineHeights.md,
     fontWeight: fontWeights.normal,
     fontFamily: fontFamilies.primary,
     color: colors.secondaryText,
