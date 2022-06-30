@@ -1,18 +1,15 @@
-export type Colors = {
-  primary: string;
+export type Color =
+  | 'primary'
+  | 'primaryText'
+  | 'secondaryText'
+  | 'linkText'
+  | 'separatorLine'
+  | 'searcher'
+  | 'disabled'
+  | 'background'
+  | 'transparent';
 
-  primaryText: string;
-  secondaryText: string;
-  linkText: string;
-
-  separatorLine: string;
-  searcher: string;
-
-  disabled: string;
-  background: string;
-
-  transparent: string;
-};
+export type Colors = Record<Color, string>;
 
 export const colors: Colors = {
   primary: '#24292F',

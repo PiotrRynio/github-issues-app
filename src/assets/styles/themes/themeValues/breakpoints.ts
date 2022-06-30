@@ -1,12 +1,6 @@
-export type Breakpoints = {
-  xxs: string;
-  xs: string;
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  xxl: string;
-};
+export type Breakpoint = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+export type Breakpoints = Record<Breakpoint, string>;
 
 export const breakpoints: Breakpoints = {
   xxs: '370px',

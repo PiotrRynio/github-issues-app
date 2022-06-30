@@ -1,7 +1,7 @@
-export type FontWeights = {
-  normal: number;
-};
+export type FontWeight = 'normal';
+
+export type FontWeights = Record<FontWeight, string>;
 
 export const fontWeights: FontWeights = {
-  normal: 500,
+  normal: '500',
 };

@@ -1,4 +1,3 @@
-import { mixins, Mixins } from './mixins';
 import {
   breakpoints,
   Breakpoints,
@@ -10,9 +9,14 @@ import {
   FontSizes,
   fontWeights,
   FontWeights,
+  LineHeights,
+  lineHeights,
   sizes,
   Sizes,
+  Typographies,
+  typographies,
 } from './themeValues';
+import { Mixins, mixins } from './mixins';
 
 export interface Theme {
   breakpoints: Breakpoints;
@@ -20,8 +24,10 @@ export interface Theme {
   fontFamilies: FontFamilies;
   fontSizes: FontSizes;
   fontWeights: FontWeights;
+  lineHeights: LineHeights;
   mixins: Mixins;
   sizes: Sizes;
+  typographies: Typographies;
 }
 
 export const theme: Theme = {
@@ -30,6 +36,8 @@ export const theme: Theme = {
   fontFamilies,
   fontSizes,
   fontWeights,
+  lineHeights,
   mixins,
   sizes,
+  typographies,
 };
