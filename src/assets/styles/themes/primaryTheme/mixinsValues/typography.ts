@@ -1,25 +1,7 @@
-import { css, DefaultTheme, Interpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { TypographyVariant } from '../../themeValues';
+import { css } from 'styled-components';
+import { PaginationProps, SubtitleProps, TypographyMixins } from '../../types/mixinsValues/TypographyMixins';
 
-interface SubtitleProps {
-  isSecondaryColor?: boolean;
-}
-interface PaginationProps {
-  isInactive?: boolean;
-}
-
-export type Typography = Record<
-  TypographyVariant,
-  ReadonlyArray<
-    Interpolation<
-      | ThemeProps<DefaultTheme>
-      | ThemedStyledProps<SubtitleProps, DefaultTheme>
-      | ThemedStyledProps<PaginationProps, DefaultTheme>
-    >
-  >
->;
-
-export const typography: Typography = {
+export const typography: TypographyMixins = {
   body1: css`
     font-size: ${({ theme }) => theme.typographies.body1.fontSize};
     line-height: ${({ theme }) => theme.typographies.body1.lineHeight};

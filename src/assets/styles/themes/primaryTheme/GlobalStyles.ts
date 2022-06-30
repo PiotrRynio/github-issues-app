@@ -1,21 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
-import { Theme } from './theme';
-
-interface GlobalStylesProps {
-  theme: Theme;
-}
+import { GlobalStylesProps } from '../types/GlobalStyles';
 
 export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0; 
+    margin: 0;
     padding: 0; 
   } 
   
   body {
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   }
-  
+   
   ::-webkit-scrollbar {
     width: 6px;
   }
