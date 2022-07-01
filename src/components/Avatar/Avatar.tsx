@@ -1,4 +1,4 @@
-import { AvatarImage } from './Avatar.styles';
+import { StyledAvatar } from './Avatar.styles';
 
 export type AvatarProps = {
   image: string;
@@ -6,5 +6,5 @@ export type AvatarProps = {
   isLarge?: boolean;
 };
 export const Avatar = ({ image, name, isLarge = false }: AvatarProps) => {
-  return <AvatarImage src={image} alt={`avatar of ${name} user`} isLarge={isLarge} />;
+  return <StyledAvatar src={image} alt={`avatar of ${name} user`} isLarge={isLarge} />;
 };

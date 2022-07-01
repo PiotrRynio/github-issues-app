@@ -8,13 +8,14 @@ import {
   SubtitleTypography,
   TitleTypography,
 } from './Typography.styles';
+import { TypographyMixinsProps } from '../../assets/styles/themes/types/mixinsValues/TypographyMixins';
 
 type TypographyVariant = 'body1' | 'body2' | 'small' | 'itemTitle' | 'title' | 'subtitle' | 'pagination';
 
 type TypographyProps = {
   children: ReactNode;
   variant: TypographyVariant;
-};
+} & TypographyMixinsProps;
 
 export const Typography = (props: TypographyProps) => {
   const TypographyVariant = TYPOGRAPHY_VARIANT_MAP[props.variant];

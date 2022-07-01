@@ -5,3 +5,4 @@ export * from './Icons';
 export * from './StatisticsLabelContainer';
 export * from './StatisticsLabel';
 export * from './Avatar';
+export * from './Link';

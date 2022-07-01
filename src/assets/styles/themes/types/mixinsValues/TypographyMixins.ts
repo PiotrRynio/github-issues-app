@@ -8,6 +8,8 @@ export interface PaginationProps {
   isInactive?: boolean;
 }
 
+export type TypographyMixinsProps = SubtitleProps & PaginationProps;
+
 export type TypographyMixins = Record<
   TypographyVariant,
   ReadonlyArray<
