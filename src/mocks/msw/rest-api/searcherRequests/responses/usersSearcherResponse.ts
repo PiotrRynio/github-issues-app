@@ -4,7 +4,7 @@ import { UsersSearcherDto } from 'types/dtos';
 // 20220701205251
 // https://api.github.com/search/users?q=defunkt&per_page=5
 
-export const usersSearcher: UsersSearcherDto = {
+export const usersSearcherResponse: UsersSearcherDto = {
   total_count: 23,
   incomplete_results: false,
   items: [

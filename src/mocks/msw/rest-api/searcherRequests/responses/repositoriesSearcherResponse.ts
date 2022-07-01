@@ -4,7 +4,7 @@ import { RepositoriesSearcherDto } from 'types/dtos';
 // 20220701205115
 // https://api.github.com/search/repositories?q=defunkt&per_page=5
 
-export const repositoriesSearcher: RepositoriesSearcherDto = {
+export const repositoriesSearcherResponse: RepositoriesSearcherDto = {
   total_count: 76,
   incomplete_results: false,
   items: [
@@ -86,7 +86,7 @@ export const repositoriesSearcher: RepositoriesSearcherDto = {
       size: 3011,
       stargazers_count: 75,
       watchers_count: 75,
-      language: null,
+      language: 'TypeScript',
       has_issues: false,
       has_projects: true,
       has_downloads: false,
