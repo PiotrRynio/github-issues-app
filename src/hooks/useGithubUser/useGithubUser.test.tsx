@@ -8,7 +8,7 @@ import { getUserStarsHeaderWillReturn } from 'mocks/msw/rest-api/userRequests/mo
 describe('Hook useGithubUser', () => {
   const testGithubUserLogin = 'defunkt';
   const correctGithubUser = {
-    id: '2',
+    id: 2,
     login: 'defunkt',
     name: 'Chris Wanstrath',
     followersNumber: 21454,

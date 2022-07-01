@@ -4,7 +4,7 @@ import { REST_API_URL, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto } from 'types/dtos';
 
 type UseGithubUser = {
-  id: string;
+  id: number;
   login: string;
   name: string;
   followersNumber: number;
@@ -16,7 +16,7 @@ type UseGithubUser = {
 export const useGithubUser = (githubUserLogin?: string): UseQueryResult<UseGithubUser> =>
   useQuery([`useUser-${githubUserLogin}`], async (): Promise<UseGithubUser> => {
     if (!githubUserLogin) {
-      throw new Error('githubUserLogin is required');
+      await Promise.reject();
     }
 
     const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`);
@@ -35,7 +35,7 @@ export const useGithubUser = (githubUserLogin?: string): UseQueryResult<UseGithu
     const starsNumber = Number(parsedLinkHeader?.last.page);
 
     const userData: UseGithubUser = {
-      id: String(userDto.id),
+      id: userDto.id,
       login: userDto.login,
       name: userDto.name,
       followersNumber: userDto.followers,
