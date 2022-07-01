@@ -78,7 +78,7 @@ export type RepositoriesSearcherDto = {
     size: number;
     stargazers_count: number;
     watchers_count: number;
-    language: string;
+    language: string | null;
     has_issues: boolean;
     has_projects: boolean;
     has_downloads: boolean;
