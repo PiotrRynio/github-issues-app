@@ -1,10 +1,12 @@
 import { Typography } from 'components';
+import { Wrapper } from './Home.styles';
 
 export const Home = () => {
   return (
-    <div>
-      <Typography variant="title">Hi ElPassion!</Typography>
-      <Typography variant="body1">Hi ElPassion!</Typography>
-    </div>
+    <Wrapper>
+      <Typography variant="title">Hi Programmer!</Typography>
+      <Typography variant="body1">You will find a searcher at the top of the page!</Typography>
+      <Typography variant="body1">Use it and find repositories or users.</Typography>
+    </Wrapper>
   );
 };
