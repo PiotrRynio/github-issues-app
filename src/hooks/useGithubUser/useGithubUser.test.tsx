@@ -1,9 +1,9 @@
 import { renderHook } from 'test-utils';
-import { userResponse } from 'mocks/msw/rest-api/userRequest/responses/userResponse';
-import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequest/mockEndpoints/userMockEndpoints';
+import { userResponse } from 'mocks/msw/rest-api/userRequests/responses/userResponse';
+import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequests/mockEndpoints/userMockEndpoints';
 import { useGithubUser } from './useGithubUser';
-import exampleUserAvatar from 'mocks/msw/rest-api/userRequest/images/example-user-avatar-1.jpg';
-import { getUserStarsHeaderWillReturn } from '../../mocks/msw/rest-api/userRequest/mockEndpoints/userStarsHeaderMockEndpoints';
+import exampleUserAvatar from 'mocks/msw/rest-api/userRequests/images/example-user-avatar-1.jpg';
+import { getUserStarsHeaderWillReturn } from 'mocks/msw/rest-api/userRequests/mockEndpoints/userStarsHeaderMockEndpoints';
 
 describe('Hook useGithubUser', () => {
   const testGithubUserLogin = 'defunkt';
