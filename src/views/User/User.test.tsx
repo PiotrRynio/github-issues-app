@@ -33,7 +33,7 @@ describe(`<User >`, () => {
     getUserStarsHeaderWillReturn({ starsNumber: correctGithubUser.starsNumber });
 
     // when
-    render(<User />);
+    await render(<User />, { route: `/users/defunkt` });
 
     // then
     const userAvatar = await screen.findByAltText(/avatar of Chris Wanstrath user/i);

@@ -1,14 +1,20 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { MemoryRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 import { AllAppProviders } from 'providers/AllAppProviders';
 
-const AllTheProviders = ({ children }: { children: ReactNode }) => {
+type AllTheProvidersProps = { children: ReactNode; route?: string };
+
+const AllTheProviders = ({ children, route = '/' }: AllTheProvidersProps) => {
+  const history = createMemoryHistory({ initialEntries: [route] });
+  history.push(route);
+
   return (
-    <MemoryRouter>
-      <AllAppProviders>{children}</AllAppProviders>
-    </MemoryRouter>
+    <Router location={history.location} navigator={history}>
+      <AllAppProviders> {children}</AllAppProviders>
+    </Router>
   );
 };
 
@@ -17,7 +23,11 @@ const customHookRender = (useHook: (props: { children: ReactNode }) => any) =>
     wrapper: AllTheProviders,
   });
 
-const customRender = (ui: any, options?: any) => render(ui, { wrapper: AllTheProviders, ...options });
+const customRender = (ui: ReactElement, options?: { route: string }) =>
+  render(ui, {
+    wrapper: (props) => <AllTheProviders {...props} route={options?.route} />,
+    ...options,
+  });
 
 export * from '@testing-library/react';
 

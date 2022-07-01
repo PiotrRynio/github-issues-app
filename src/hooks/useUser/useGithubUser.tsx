@@ -13,17 +13,28 @@ type UseGithubUser = {
   avatar: string;
 };
 
-export const useGithubUser = (githubUserLogin: string): UseQueryResult<UseGithubUser> =>
+export const useGithubUser = (githubUserLogin?: string): UseQueryResult<UseGithubUser> =>
   useQuery([`useUser-${githubUserLogin}`], async (): Promise<UseGithubUser> => {
+    if (!githubUserLogin) {
+      throw new Error('githubUserLogin is required');
+    }
+
     const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`);
+    if (!userResponse.ok) {
+      await Promise.reject();
+    }
     const userDto: UserDto = await userResponse.json();
 
     const starsResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}/starred?per_page=1`);
+    if (!starsResponse.ok) {
+      await Promise.reject();
+    }
+
     const linkHeader = starsResponse.headers.get('Link');
     const parsedLinkHeader = parseLinkHeader(linkHeader);
     const starsNumber = Number(parsedLinkHeader?.last.page);
 
-    const userData = {
+    const userData: UseGithubUser = {
       id: String(userDto.id),
       login: userDto.login,
       name: userDto.name,

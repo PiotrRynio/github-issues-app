@@ -1,14 +1,25 @@
-import { StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
+import { useMatch } from 'react-router-dom';
 import { useGithubUser } from 'hooks/useUser';
+import { StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
 import { Avatar, TitlesContainer, Wrapper } from './User.styles';
 
 export const User = () => {
-  const { data } = useGithubUser('defunkt');
+  const githubUserLogin = useMatch('/users/:githubUserLogin')?.params.githubUserLogin;
 
-  if (!data) {
+  const { data, isLoading, isError } = useGithubUser(githubUserLogin);
+
+  if (isLoading) {
     return (
       <Wrapper>
         <Typography variant="body1"> Loading...</Typography>
+      </Wrapper>
+    );
+  }
+
+  if (isError || !data) {
+    return (
+      <Wrapper>
+        <Typography variant="body1"> Error...</Typography>
       </Wrapper>
     );
   }

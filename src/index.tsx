@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from 'views';
 import { AllAppProviders } from './providers';
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.DEVELOPMENT === 'TRUE') {
   const { worker } = require('./mocks/msw/rest-api/browser');
   worker.start().then();
 }

@@ -9,8 +9,8 @@ export const App = () => {
       <TopBar />
       <MainSection>
         <Routes>
+          <Route path="/users/:githubUserLogin" element={<User />} />
           <Route path="/" element={<Results />} />
-          <Route path="users/:githubUserLogin" element={<User />} />
         </Routes>
       </MainSection>
     </Wrapper>

@@ -16,6 +16,7 @@ export const Avatar = styled.img`
   width: 296px;
   height: 296px;
   border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.disabled};
 `;
 
 export const TitlesContainer = styled.section`
