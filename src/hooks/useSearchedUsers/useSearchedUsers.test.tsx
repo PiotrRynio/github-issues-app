@@ -1,7 +1,7 @@
 import { renderHook } from 'test-utils';
 import { getUsersSearcherWillReturn } from 'mocks/msw/rest-api/searcherRequests/mockEndpoints/usersSearcherMockEndpoints';
 import { usersSearcherResponse } from 'mocks/msw/rest-api/searcherRequests/responses/usersSearcherResponse';
-import { SearchedUser, useSearchedUsers } from './useSearchedUsers';
+import { SearchedUser, UseSearchedUsers, useSearchedUsers } from './useSearchedUsers';
 
 describe('Hook useSearchedUsers', () => {
   const searchedText = 'defunkt';
@@ -56,10 +56,8 @@ describe('Hook useSearchedUsers', () => {
     await waitFor(() => result.current.isSuccess);
 
     // then
-    const { data } = result.current;
-    const { users, totalUsersNumber } = data;
-
-    expect(totalUsersNumber).toStrictEqual(correctTotalUsersNumber);
-    expect(users[0]).toStrictEqual(correctSearchedUser);
+    const { searchedUsers, totalSearchedUsersNumber } = result.current.data as UseSearchedUsers;
+    expect(totalSearchedUsersNumber).toStrictEqual(correctTotalUsersNumber);
+    expect(searchedUsers[0]).toStrictEqual(correctSearchedUser);
   });
 });

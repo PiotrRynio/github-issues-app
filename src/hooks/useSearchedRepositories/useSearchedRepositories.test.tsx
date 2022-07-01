@@ -1,11 +1,12 @@
 import { renderHook } from 'test-utils';
-import { useSearchedRepositories } from './useSearchedRepositories';
-import { getRepositoriesSearcherWillReturn } from '../../mocks/msw/rest-api/searcherRequests/mockEndpoints/repositoriesSearcherMockEndpoints';
-import { repositoriesSearcherResponse } from '../../mocks/msw/rest-api/searcherRequests/responses/repositoriesSearcherResponse';
+import { UseSearchedRepositories, useSearchedRepositories } from './useSearchedRepositories';
+import { getRepositoriesSearcherWillReturn } from 'mocks/msw/rest-api/searcherRequests/mockEndpoints/repositoriesSearcherMockEndpoints';
+import { repositoriesSearcherResponse } from 'mocks/msw/rest-api/searcherRequests/responses/repositoriesSearcherResponse';
 
 describe('Hook useSearchedRepositories', () => {
   const searchedText = 'defunkt';
-  const correctSearchedUsers = {
+  const correctTotalSearchedRepository = 23;
+  const correctSearchedRepository = {
     id: '2',
     name: 'defunkt/defunkt.github.com',
     description: 'My GitHub Page',
@@ -58,6 +59,8 @@ describe('Hook useSearchedRepositories', () => {
     await waitFor(() => result.current.isSuccess);
 
     // then
-    expect(result.current.data[1]).toStrictEqual(correctSearchedUsers);
+    const { totalSearchedRepositoriesNumber, searchedRepositories } = result.current.data as UseSearchedRepositories;
+    expect(totalSearchedRepositoriesNumber).toStrictEqual(correctTotalSearchedRepository);
+    expect(searchedRepositories[0]).toStrictEqual(correctSearchedRepository);
   });
 });

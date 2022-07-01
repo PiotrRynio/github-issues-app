@@ -11,8 +11,8 @@ export type SearchedUser = {
 };
 
 export type UseSearchedUsers = {
-  totalUsersNumber: number;
-  users: SearchedUser[];
+  totalSearchedUsersNumber: number;
+  searchedUsers: SearchedUser[];
 };
 
 export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearchedUsers> =>
@@ -47,5 +47,5 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
       }),
     );
 
-    return { totalUsersNumber: searchedUsersDto.total_count, users: usersDetails };
+    return { totalSearchedUsersNumber: searchedUsersDto.total_count, searchedUsers: usersDetails };
   });
