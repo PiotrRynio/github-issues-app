@@ -1,5 +1,5 @@
 import { useMatch } from 'react-router-dom';
-import { useGithubUser } from 'hooks/useUser';
+import { useGithubUser } from 'hooks/useGithubUser';
 import { Avatar, StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
 import { TitlesContainer, Wrapper } from './User.styles';
 

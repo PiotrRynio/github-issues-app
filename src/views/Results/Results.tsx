@@ -1,9 +1,9 @@
-import { Typography } from 'components/Typography/Typography';
+import { Typography } from 'components';
 
 export const Results = () => {
   return (
     <div>
-      Results: <Typography variant="body1">Results</Typography>
+      <Typography variant="body1">XXX Results / NO results</Typography>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import { render, screen } from 'test-utils';
 import { User } from './User';
-import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequest/mockEndpoints/userMockEndpoints';
-import { userResponse } from 'mocks/msw/rest-api/userRequest/responses/userResponse';
-import { getUserStarsHeaderWillReturn } from 'mocks/msw/rest-api/userRequest/mockEndpoints/userStarsHeaderMockEndpoints';
-import exampleUserAvatarUrl from 'mocks/msw/rest-api/userRequest/images/example-user-avatar-1.jpg';
+import { getUserIsLoading, getUserWillReturn } from 'mocks/msw/rest-api/userRequests/mockEndpoints/userMockEndpoints';
+import { userResponse } from 'mocks/msw/rest-api/userRequests/responses/userResponse';
+import { getUserStarsHeaderWillReturn } from 'mocks/msw/rest-api/userRequests/mockEndpoints/userStarsHeaderMockEndpoints';
+import exampleUserAvatarUrl from 'mocks/msw/rest-api/userRequests/images/example-user-avatar-1.jpg';
 
 describe(`<User >`, () => {
   const correctGithubUser = {
