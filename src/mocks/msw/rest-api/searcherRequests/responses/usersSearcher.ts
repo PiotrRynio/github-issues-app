@@ -1,5 +1,5 @@
 import exampleUserAvatar from '../images/example-user-avatar-1.jpg';
-import { UsersSearcherDto } from 'types/dtos/UsersSearcherDto';
+import { UsersSearcherDto } from 'types/dtos';
 
 // 20220701193801
 // https://api.github.com/search/users?q=rynio&per_page=5

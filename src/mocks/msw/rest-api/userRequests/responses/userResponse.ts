@@ -1,4 +1,4 @@
-import { UserDto } from 'types/dtos/UserDto';
+import { UserDto } from 'types/dtos';
 import exampleUserAvatar from '../images/example-user-avatar-1.jpg';
 
 // 20220627154721

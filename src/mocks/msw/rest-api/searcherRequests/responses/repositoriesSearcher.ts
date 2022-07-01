@@ -1,5 +1,5 @@
 import exampleUserAvatar from '../images/example-user-avatar-1.jpg';
-import { RepositoriesSearcherDto } from 'types/dtos/RepositoriesSearcherDto';
+import { RepositoriesSearcherDto } from 'types/dtos';
 
 // 20220701200546
 // https://api.github.com/search/repositories?q=rynio&per_page=5
