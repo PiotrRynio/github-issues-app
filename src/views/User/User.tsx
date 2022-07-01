@@ -1,7 +1,7 @@
 import { useMatch } from 'react-router-dom';
 import { useGithubUser } from 'hooks/useUser';
-import { StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
-import { Avatar, TitlesContainer, Wrapper } from './User.styles';
+import { Avatar, StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
+import { TitlesContainer, Wrapper } from './User.styles';
 
 export const User = () => {
   const githubUserLogin = useMatch('/users/:githubUserLogin')?.params.githubUserLogin;
@@ -28,7 +28,7 @@ export const User = () => {
 
   return (
     <Wrapper>
-      <Avatar src={avatar} alt={`avatar of ${name} user`} />
+      <Avatar image={avatar} name={name} isLarge />
       <TitlesContainer>
         <Typography variant="title">{name}</Typography>
         <Typography variant="subtitle">{login}</Typography>
