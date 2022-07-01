@@ -27,8 +27,6 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
     }
     const searchedUsersDto: UsersSearcherDto = await searchedUsersResponse.json();
 
-    console.log('searchedUsersDto', searchedUsersDto);
-
     const usersDetails: SearchedUser[] = await Promise.all(
       searchedUsersDto.items.map(async (user) => {
         const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${user.login}`);

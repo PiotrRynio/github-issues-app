@@ -97,7 +97,7 @@ export const repositoriesSearcherResponse: RepositoriesSearcherDto = {
       archived: false,
       disabled: false,
       open_issues_count: 4,
-      license: null,
+      license: 'MIT',
       allow_forking: true,
       is_template: false,
       web_commit_signoff_required: false,

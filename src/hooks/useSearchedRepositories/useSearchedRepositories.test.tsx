@@ -1,13 +1,13 @@
 import { renderHook } from 'test-utils';
-import { UseSearchedRepositories, useSearchedRepositories } from './useSearchedRepositories';
+import { SearchedRepository, UseSearchedRepositories, useSearchedRepositories } from './useSearchedRepositories';
 import { getRepositoriesSearcherWillReturn } from 'mocks/msw/rest-api/searcherRequests/mockEndpoints/repositoriesSearcherMockEndpoints';
 import { repositoriesSearcherResponse } from 'mocks/msw/rest-api/searcherRequests/responses/repositoriesSearcherResponse';
 
 describe('Hook useSearchedRepositories', () => {
   const searchedText = 'defunkt';
-  const correctTotalSearchedRepository = 23;
-  const correctSearchedRepository = {
-    id: '2',
+  const correctTotalSearchedRepository = 76;
+  const correctSearchedRepository: SearchedRepository = {
+    id: 91988,
     name: 'defunkt/defunkt.github.com',
     description: 'My GitHub Page',
     starsNumber: 75,
