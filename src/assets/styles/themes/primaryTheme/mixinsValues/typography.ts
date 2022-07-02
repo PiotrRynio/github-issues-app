@@ -29,7 +29,6 @@ export const typography: TypographyMixins = {
     font-weight: ${({ theme }) => theme.typographies.itemTitle.fontWeight};
     font-family: ${({ theme }) => theme.typographies.itemTitle.fontFamily};
     color: ${({ theme }) => theme.typographies.itemTitle.color};
-    cursor: pointer;
   `,
   title: css`
     font-size: ${({ theme }) => theme.typographies.title.fontSize};
@@ -52,7 +51,8 @@ export const typography: TypographyMixins = {
     font-weight: ${({ theme }) => theme.typographies.pagination.fontWeight};
     font-family: ${({ theme }) => theme.typographies.pagination.fontFamily};
     color: ${({ theme }) => theme.typographies.pagination.color};
-    cursor: pointer;
+    color: ${({ theme, isInactive }) => (isInactive ? theme.colors.disabled : theme.typographies.pagination.color)};
+    cursor: ${({ isInactive }) => (isInactive ? 'default' : 'pointer')};
 
     ${({ theme, isInactive }) =>
       isInactive &&
