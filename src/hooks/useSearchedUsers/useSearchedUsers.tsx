@@ -1,6 +1,7 @@
 import { useQuery, UseQueryResult } from 'react-query';
 import { REST_API_URL, USER_SEARCHER_PATH, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto, UsersSearcherDto } from 'types';
+import { GITHUB_REST_API_HEADERS } from '../../constants/headers';
 
 export type SearchedUser = {
   id: number;
@@ -16,12 +17,15 @@ export type UseSearchedUsers = {
 };
 
 export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearchedUsers> =>
-  useQuery([`useSearchedUsers-${searchedText}`], async (): Promise<UseSearchedUsers> => {
+  useQuery([`useSearchedUsers`, searchedText], async (): Promise<UseSearchedUsers> => {
     if (!searchedText) {
       return { totalSearchedUsersNumber: 0, searchedUsers: [] };
     }
 
-    const searchedUsersResponse = await fetch(`${REST_API_URL}${USER_SEARCHER_PATH}?q=${searchedText}`);
+    const searchedUsersResponse = await fetch(
+      `${REST_API_URL}${USER_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
+      GITHUB_REST_API_HEADERS,
+    );
     if (!searchedUsersResponse.ok) {
       await Promise.reject();
     }
@@ -29,10 +33,12 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
 
     const usersDetails: SearchedUser[] = await Promise.all(
       searchedUsersDto.items.map(async (user) => {
-        const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${user.login}`);
+        const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${user.login}`, GITHUB_REST_API_HEADERS);
+
         if (!userResponse.ok) {
           await Promise.reject();
         }
+
         const userDto: UserDto = await userResponse.json();
 
         return {

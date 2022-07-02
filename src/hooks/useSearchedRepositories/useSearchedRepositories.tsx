@@ -1,6 +1,7 @@
 import { useQuery, UseQueryResult } from 'react-query';
 import { REPOSITORIES_SEARCHER_PATH, REST_API_URL } from 'constants/restApiPaths';
 import { RepositoriesSearcherDto } from 'types';
+import { GITHUB_REST_API_HEADERS } from '../../constants/headers';
 
 export type SearchedRepository = {
   id: number;
@@ -18,12 +19,15 @@ export type UseSearchedRepositories = {
   searchedRepositories: SearchedRepository[];
 };
 export const useSearchedRepositories = (searchedText?: string): UseQueryResult<UseSearchedRepositories> =>
-  useQuery([`useSearchedRepositories-${searchedText}`], async (): Promise<UseSearchedRepositories> => {
+  useQuery([`useSearchedRepositories`, searchedText], async (): Promise<UseSearchedRepositories> => {
     if (!searchedText) {
       return { totalSearchedRepositoriesNumber: 0, searchedRepositories: [] };
     }
 
-    const searchedRepositoriesResponse = await fetch(`${REST_API_URL}${REPOSITORIES_SEARCHER_PATH}?q=${searchedText}`);
+    const searchedRepositoriesResponse = await fetch(
+      `${REST_API_URL}${REPOSITORIES_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
+      GITHUB_REST_API_HEADERS,
+    );
     if (!searchedRepositoriesResponse.ok) {
       await Promise.reject();
     }

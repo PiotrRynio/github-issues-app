@@ -2,6 +2,7 @@ import { useQuery, UseQueryResult } from 'react-query';
 import parseLinkHeader from 'parse-link-header';
 import { REST_API_URL, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto } from 'types/dtos';
+import { GITHUB_REST_API_HEADERS } from 'constants/headers';
 
 type UseGithubUser = {
   id: number;
@@ -14,18 +15,21 @@ type UseGithubUser = {
 };
 
 export const useGithubUser = (githubUserLogin?: string): UseQueryResult<UseGithubUser> =>
-  useQuery([`useUser-${githubUserLogin}`], async (): Promise<UseGithubUser> => {
+  useQuery([`useUser`, githubUserLogin], async (): Promise<UseGithubUser> => {
     if (!githubUserLogin) {
       await Promise.reject();
     }
 
-    const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`);
+    const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}`, GITHUB_REST_API_HEADERS);
     if (!userResponse.ok) {
       await Promise.reject();
     }
     const userDto: UserDto = await userResponse.json();
 
-    const starsResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${githubUserLogin}/starred?per_page=1`);
+    const starsResponse = await fetch(
+      `${REST_API_URL}${USERS_PATH}/${githubUserLogin}/starred?per_page=1`,
+      GITHUB_REST_API_HEADERS,
+    );
     if (!starsResponse.ok) {
       await Promise.reject();
     }

@@ -42,6 +42,11 @@ Others:
 5. In the Figma project there were different dimensions of the same components. It was impossible to
    use Pixel Perfect. I made that this app looks good.
 
+## Authenticating with GitHub Api:
+Generate new token and set it in `.local.env` file in `GITHUB_REST_API_TOKEN` variable.
+You can generate new token in [Github developer settings](https://github.com/settings/tokens).
+During generating token don't addi permissions.
+ 
 ## Authors:
 
 *Piotr Rynio*  
