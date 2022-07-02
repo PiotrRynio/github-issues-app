@@ -20,7 +20,7 @@ type TypographyProps = {
 export const Typography = (props: TypographyProps) => {
   const TypographyVariant = TYPOGRAPHY_VARIANT_MAP[props.variant];
 
-  return <TypographyVariant {...props} />;
+  return <TypographyVariant {...props}>{props.children}</TypographyVariant>;
 };
 
 const TYPOGRAPHY_VARIANT_MAP: {

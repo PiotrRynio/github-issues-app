@@ -13,5 +13,7 @@ export const colors: Colors = {
   disabled: '#8D959F',
   background: '#fff',
 
+  border: '#C4C4C4',
+
   transparent: 'transparent',
 };

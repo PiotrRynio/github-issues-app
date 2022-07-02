@@ -4,11 +4,13 @@ import { UserDto, UsersSearcherDto } from 'types';
 import { GITHUB_REST_API_HEADERS } from '../../constants/headers';
 
 export type SearchedUser = {
+  type: 'user';
   id: number;
   login: string;
   name: string;
   description?: string;
   location?: string;
+  avatar: string;
 };
 
 export type UseSearchedUsers = {
@@ -42,11 +44,13 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
         const userDto: UserDto = await userResponse.json();
 
         return {
+          type: 'user',
           id: userDto.id,
           login: userDto.login,
           name: userDto.name,
           description: userDto.bio || undefined,
           location: userDto.location || undefined,
+          avatar: userDto.avatar_url,
         };
       }),
     );

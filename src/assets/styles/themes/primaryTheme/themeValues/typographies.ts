@@ -28,7 +28,7 @@ export const typographies: Typographies = {
   },
 
   itemTitle: {
-    fontSize: fontSizes.xs,
+    fontSize: fontSizes.md,
     lineHeight: lineHeights.lg,
     fontWeight: fontWeights.normal,
     fontFamily: fontFamilies.primary,

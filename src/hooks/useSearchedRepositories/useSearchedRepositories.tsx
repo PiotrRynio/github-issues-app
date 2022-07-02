@@ -1,9 +1,10 @@
 import { useQuery, UseQueryResult } from 'react-query';
-import { REPOSITORIES_SEARCHER_PATH, REST_API_URL } from 'constants/restApiPaths';
 import { RepositoriesSearcherDto } from 'types';
-import { GITHUB_REST_API_HEADERS } from '../../constants/headers';
+import { REPOSITORIES_SEARCHER_PATH, REST_API_URL } from 'constants/restApiPaths';
+import { GITHUB_REST_API_HEADERS } from 'constants/headers';
 
 export type SearchedRepository = {
+  type: 'repository';
   id: number;
   name: string;
   description?: string;
@@ -35,6 +36,7 @@ export const useSearchedRepositories = (searchedText?: string): UseQueryResult<U
     const searchedRepositoriesDto: RepositoriesSearcherDto = await searchedRepositoriesResponse.json();
 
     const repositoriesDetails: SearchedRepository[] = searchedRepositoriesDto.items.map((searchedRepository) => ({
+      type: 'repository',
       id: searchedRepository.id,
       name: searchedRepository.full_name,
       description: searchedRepository.description || undefined,

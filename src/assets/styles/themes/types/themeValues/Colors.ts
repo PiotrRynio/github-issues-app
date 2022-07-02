@@ -7,6 +7,7 @@ export type Color =
   | 'searcher'
   | 'disabled'
   | 'background'
-  | 'transparent';
+  | 'transparent'
+  | 'border';
 
 export type Colors = Record<Color, string>;

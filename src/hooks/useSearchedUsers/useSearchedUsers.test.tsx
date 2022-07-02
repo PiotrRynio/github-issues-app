@@ -7,11 +7,13 @@ describe('Hook useSearchedUsers', () => {
   const searchedText = 'defunkt';
   const correctTotalUsersNumber = 23;
   const correctSearchedUser: SearchedUser = {
+    type: 'user',
     id: 2,
     login: 'defunkt',
     name: 'Chris Wanstrath',
     description: 'example description',
     location: 'London, England',
+    avatar: 'example-user-avatar-1.jpg',
   };
 
   it(`should render hook`, async () => {

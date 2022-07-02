@@ -7,6 +7,7 @@ describe('Hook useSearchedRepositories', () => {
   const searchedText = 'defunkt';
   const correctTotalSearchedRepository = 76;
   const correctSearchedRepository: SearchedRepository = {
+    type: 'repository',
     id: 91988,
     name: 'defunkt/defunkt.github.com',
     description: 'My GitHub Page',
