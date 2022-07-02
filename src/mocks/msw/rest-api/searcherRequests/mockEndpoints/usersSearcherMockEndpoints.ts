@@ -5,7 +5,7 @@ import { UsersSearcherDto } from 'types';
 
 export const getUsersSearcherWillReturn = (exampleResponse: UsersSearcherDto) => {
   server.use(
-    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}/:searchedText`, (req, res, ctx) => {
+    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}?q=searchedText`, (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(exampleResponse));
     }),
   );
@@ -13,7 +13,7 @@ export const getUsersSearcherWillReturn = (exampleResponse: UsersSearcherDto) =>
 
 export const getUsersSearcherIsLoading = () => {
   server.use(
-    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}/:searchedText`, (req, res, ctx) => {
+    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}?q=searchedText`, (req, res, ctx) => {
       return res(ctx.delay('infinite'));
     }),
   );
@@ -21,7 +21,7 @@ export const getUsersSearcherIsLoading = () => {
 
 export const getUsersSearcherWillReturnFail = () => {
   server.use(
-    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}/:searchedText`, (req, res, ctx) => {
+    rest.get(`${REST_API_URL}${USER_SEARCHER_PATH}?q=searchedText`, (req, res, ctx) => {
       return res(ctx.status(404));
     }),
   );

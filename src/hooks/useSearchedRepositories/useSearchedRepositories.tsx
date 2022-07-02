@@ -20,13 +20,14 @@ export type UseSearchedRepositories = {
 export const useSearchedRepositories = (searchedText?: string): UseQueryResult<UseSearchedRepositories> =>
   useQuery([`useSearchedRepositories-${searchedText}`], async (): Promise<UseSearchedRepositories> => {
     if (!searchedText) {
-      await Promise.reject();
+      return { totalSearchedRepositoriesNumber: 0, searchedRepositories: [] };
     }
 
-    const searchedRepositoriesResponse = await fetch(`${REST_API_URL}${REPOSITORIES_SEARCHER_PATH}/${searchedText}`);
+    const searchedRepositoriesResponse = await fetch(`${REST_API_URL}${REPOSITORIES_SEARCHER_PATH}?q=${searchedText}`);
     if (!searchedRepositoriesResponse.ok) {
       await Promise.reject();
     }
+
     const searchedRepositoriesDto: RepositoriesSearcherDto = await searchedRepositoriesResponse.json();
 
     const repositoriesDetails: SearchedRepository[] = searchedRepositoriesDto.items.map((searchedRepository) => ({

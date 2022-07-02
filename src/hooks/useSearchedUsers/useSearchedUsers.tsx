@@ -18,10 +18,10 @@ export type UseSearchedUsers = {
 export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearchedUsers> =>
   useQuery([`useSearchedUsers-${searchedText}`], async (): Promise<UseSearchedUsers> => {
     if (!searchedText) {
-      await Promise.reject();
+      return { totalSearchedUsersNumber: 0, searchedUsers: [] };
     }
 
-    const searchedUsersResponse = await fetch(`${REST_API_URL}${USER_SEARCHER_PATH}/${searchedText}`);
+    const searchedUsersResponse = await fetch(`${REST_API_URL}${USER_SEARCHER_PATH}?q=${searchedText}`);
     if (!searchedUsersResponse.ok) {
       await Promise.reject();
     }
