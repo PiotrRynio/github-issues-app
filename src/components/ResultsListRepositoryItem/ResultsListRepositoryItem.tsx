@@ -1,6 +1,7 @@
 import { SearchedRepository } from 'hooks';
 import { BookIcon, StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography } from 'components';
 import { ContentContainer, TitleContainer, Wrapper } from './ResultsListRepositoryItem.styles';
+import { formattedLastUpdateDate } from 'utils';
 
 export type ResultsListRepositoryItemProps = SearchedRepository;
 
@@ -13,12 +14,6 @@ export const ResultsListRepositoryItem = ({
   lastUpdateDate,
   openedIssuesNumber,
 }: ResultsListRepositoryItemProps) => {
-  const formattedLastUpdateDate = lastUpdateDate.toLocaleDateString('en-GB', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-
   return (
     <Wrapper>
       <TitleContainer>
@@ -48,7 +43,7 @@ export const ResultsListRepositoryItem = ({
           )}
 
           <StatisticsLabel>
-            <Typography variant="small">Updated on {formattedLastUpdateDate} </Typography>
+            <Typography variant="small">Updated on {formattedLastUpdateDate(lastUpdateDate)} </Typography>
           </StatisticsLabel>
 
           {!!openedIssuesNumber && (
