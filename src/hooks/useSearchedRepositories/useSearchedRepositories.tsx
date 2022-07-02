@@ -12,7 +12,7 @@ export type SearchedRepository = {
   programmingLanguage?: string;
   license?: string;
   openedIssuesNumber: number;
-  updated_at: string;
+  lastUpdateDate: Date;
 };
 
 export type UseSearchedRepositories = {
@@ -44,7 +44,7 @@ export const useSearchedRepositories = (searchedText?: string): UseQueryResult<U
       programmingLanguage: searchedRepository.language || undefined,
       license: searchedRepository.license?.name || undefined,
       openedIssuesNumber: searchedRepository.open_issues_count,
-      updated_at: searchedRepository.updated_at,
+      lastUpdateDate: new Date(searchedRepository.updated_at),
     }));
 
     return {

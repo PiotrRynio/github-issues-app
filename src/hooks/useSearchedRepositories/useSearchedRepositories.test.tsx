@@ -13,9 +13,9 @@ describe('Hook useSearchedRepositories', () => {
     description: 'My GitHub Page',
     starsNumber: 75,
     programmingLanguage: 'TypeScript',
-    license: 'MIT',
+    license: 'MIT License',
     openedIssuesNumber: 4,
-    updated_at: '2022-06-30T10:27:50Z',
+    lastUpdateDate: new Date('2022-06-30T10:27:50Z'),
   };
 
   it(`should render hook`, async () => {

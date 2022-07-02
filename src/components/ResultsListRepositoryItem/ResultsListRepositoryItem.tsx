@@ -10,9 +10,15 @@ export const ResultsListRepositoryItem = ({
   starsNumber,
   programmingLanguage,
   license,
-  updated_at,
+  lastUpdateDate,
   openedIssuesNumber,
 }: ResultsListRepositoryItemProps) => {
+  const formattedLastUpdateDate = lastUpdateDate.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
   return (
     <Wrapper>
       <TitleContainer>
@@ -42,7 +48,7 @@ export const ResultsListRepositoryItem = ({
           )}
 
           <StatisticsLabel>
-            <Typography variant="small">{updated_at} </Typography>
+            <Typography variant="small">Updated on {formattedLastUpdateDate} </Typography>
           </StatisticsLabel>
 
           {!!openedIssuesNumber && (
