@@ -42,7 +42,7 @@ export const useSearchedRepositories = (searchedText?: string): UseQueryResult<U
       description: searchedRepository.description || undefined,
       starsNumber: searchedRepository.stargazers_count,
       programmingLanguage: searchedRepository.language || undefined,
-      license: searchedRepository.license || undefined,
+      license: searchedRepository.license?.name || undefined,
       openedIssuesNumber: searchedRepository.open_issues_count,
       updated_at: searchedRepository.updated_at,
     }));
