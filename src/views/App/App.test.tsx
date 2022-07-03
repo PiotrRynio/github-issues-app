@@ -4,9 +4,17 @@ import { screen } from 'test-utils';
 import { getUserWillReturn } from '../../mocks/msw/rest-api/userRequests/mockEndpoints/userMockEndpoints';
 import { getUserStarsHeaderWillReturn } from '../../mocks/msw/rest-api/userRequests/mockEndpoints/userStarsHeaderMockEndpoints';
 import { userResponse } from '../../mocks/msw/rest-api/userRequests/responses/userResponse';
+import { getRepositoriesSearcherWillReturn } from '../../mocks/msw/rest-api/searcherRequests/mockEndpoints/repositoriesSearcherMockEndpoints';
+import { repositoriesSearcherResponse } from '../../mocks/msw/rest-api/searcherRequests/responses/repositoriesSearcherResponse';
+import { getUsersSearcherWillReturn } from '../../mocks/msw/rest-api/searcherRequests/mockEndpoints/usersSearcherMockEndpoints';
+import { usersSearcherResponse } from '../../mocks/msw/rest-api/searcherRequests/responses/usersSearcherResponse';
 
 describe(`<App>`, () => {
   it('renders correctly', async () => {
+    // given
+    getUsersSearcherWillReturn(usersSearcherResponse);
+    getRepositoriesSearcherWillReturn(repositoriesSearcherResponse);
+
     // when
     render(<App />);
 
@@ -27,7 +35,7 @@ describe(`<App>`, () => {
     render(<App />, { route: '/users/defunkt' });
 
     // then
-    const avatar = await screen.findByRole('img', { name: /avatar of Chris Wanstrath user/i }, { timeout: 8000 });
+    const avatar = await screen.findByRole('img', { name: /avatar of Chris Wanstrath user/i });
     expect(avatar).toBeInTheDocument();
 
     screen.getByRole('heading', {
@@ -44,5 +52,5 @@ describe(`<App>`, () => {
     screen.getByText(/Following/i);
     screen.getByText(/star/i);
     screen.getByText(/42/i);
-  }, 10000);
+  });
 });
