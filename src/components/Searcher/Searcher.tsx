@@ -20,19 +20,23 @@ export const Searcher = () => {
       return;
     }
 
+    if (searchParams.get('query') === null && !debouncingValue) {
+      return;
+    }
+
     const params = { query: debouncedValue };
     setSearchParams(params);
   };
 
-  const { debouncingValue, setDebouncingValue } = useDebounce<string>({
+  const { debouncingValue, setDebouncingValue, setValueWithoutCallback } = useDebounce<string>({
     initialValue: searchParams.get('query') || '',
     delay: 1000,
     debouncedCallback,
   });
 
   useEffect(() => {
-    if (searchParams.get('query') !== debouncingValue || !debouncingValue) {
-      setDebouncingValue(searchParams.get('query') || '');
+    if (searchParams.get('query') !== debouncingValue) {
+      setValueWithoutCallback(searchParams.get('query') || '');
     }
   }, [searchParams, setDebouncingValue]);
 

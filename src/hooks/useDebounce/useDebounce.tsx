@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
-type UseDebounce<T> = { debouncedValue: T; debouncingValue: T; setDebouncingValue: (value: T) => void };
+type UseDebounce<T> = {
+  debouncedValue: T;
+  debouncingValue: T;
+  setDebouncingValue: (value: T) => void;
+  setValueWithoutCallback: (value: T) => void;
+};
 
 type UseDebounceProps<T> = {
   initialValue: T;
@@ -26,5 +31,10 @@ export function useDebounce<T>({ initialValue, debouncedCallback, delay }: UseDe
     };
   }, [debouncingValue, delay, debouncedCallback, debouncedValue]);
 
-  return { debouncedValue, debouncingValue, setDebouncingValue };
+  const setValueWithoutCallback = (value: T) => {
+    setDebouncingValue(value);
+    setDebouncedValue(value);
+  };
+
+  return { debouncedValue, debouncingValue, setDebouncingValue, setValueWithoutCallback };
 }
