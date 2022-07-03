@@ -1,6 +1,5 @@
 {
   "name": "github-issues-app",
-  "homepage": "https://piotrrynio.github.io/github-issues-app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
