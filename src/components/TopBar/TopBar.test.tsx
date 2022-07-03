@@ -8,5 +8,6 @@ describe(`<TopBar>`, () => {
 
     // then
     screen.getByRole('img', { name: /github logo/i });
+    screen.getByPlaceholderText(/search/i);
   });
 });
