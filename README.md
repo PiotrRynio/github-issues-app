@@ -1,7 +1,7 @@
 # Github Issues App
 
 ## Overview:
-Our app should allow to search Github for users and repositories.
+Our app should allow searching GitHub for users and repositories.
 
 - Demo on Netlify: [LINK](https://rynio-github-issues-app.netlify.app/)
 - API URL: [Github REST API(v3)](https://docs.github.com/en/rest)
