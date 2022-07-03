@@ -1,5 +1,5 @@
 import { typography } from './index';
-import { Mixins } from 'assets/styles/themes/types/mixinsValues';
+import { Mixins } from '../../types';
 
 export const mixins: Mixins = {
   typography,

@@ -1,4 +1,6 @@
-import { Breakpoints } from '../../types';
+export type Breakpoint = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+export type Breakpoints = Record<Breakpoint, string>;
 
 export const breakpoints: Breakpoints = {
   xxs: '370px',

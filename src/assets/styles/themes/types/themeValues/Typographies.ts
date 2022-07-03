@@ -1,4 +1,5 @@
-import { Color, Colors, FontSize, FontSizes, FontWeight, FontWeights, LineHeight, LineHeights } from '.';
+import { FontSize, FontSizes, FontWeight, FontWeights, LineHeight, LineHeights } from '../../common';
+import { Color, Colors } from './Colors';
 
 type Typography = {
   fontSize: FontSizes[FontSize];

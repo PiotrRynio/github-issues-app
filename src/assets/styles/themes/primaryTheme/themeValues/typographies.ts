@@ -1,12 +1,13 @@
-import { colors, fontFamilies, fontSizes, fontWeights } from '.';
+import { fontSizes, fontWeights, lineHeights } from '../../common';
+import { fontFamilies } from './fontFamilies';
 import { Typographies } from '../../types';
-import { lineHeights } from './lineHeight';
+import { colors } from './colors';
 
 export const typographies: Typographies = {
   body1: {
     fontSize: fontSizes.md,
     lineHeight: lineHeights.lg,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.primaryText,
   },
@@ -14,7 +15,7 @@ export const typographies: Typographies = {
   body2: {
     fontSize: fontSizes.sm,
     lineHeight: lineHeights.md,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.secondaryText,
   },
@@ -22,7 +23,7 @@ export const typographies: Typographies = {
   small: {
     fontSize: fontSizes.xs,
     lineHeight: lineHeights.sm,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.primaryText,
   },
@@ -30,7 +31,7 @@ export const typographies: Typographies = {
   itemTitle: {
     fontSize: fontSizes.md,
     lineHeight: lineHeights.lg,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.linkText,
   },
@@ -38,7 +39,7 @@ export const typographies: Typographies = {
   title: {
     fontSize: fontSizes.xl,
     lineHeight: lineHeights.xl,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.secondaryText,
   },
@@ -46,7 +47,7 @@ export const typographies: Typographies = {
   subtitle: {
     fontSize: fontSizes.lg,
     lineHeight: lineHeights.lg,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.primaryText,
   },
@@ -54,7 +55,7 @@ export const typographies: Typographies = {
   pagination: {
     fontSize: fontSizes.md,
     lineHeight: lineHeights.md,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.medium,
     fontFamily: fontFamilies.primary,
     color: colors.linkText,
   },
