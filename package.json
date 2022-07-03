@@ -1,5 +1,6 @@
 {
-  "name": "react-17-template",
+  "name": "github-issues-app",
+  "homepage": "https://piotrrynio.github.io/github-issues-app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -27,7 +28,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.2.1",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.41",
     "@types/parse-link-header": "^2.0.0",
