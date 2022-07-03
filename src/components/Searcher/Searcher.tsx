@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDebounce } from 'hooks';
 import { StyledInput } from './Searcher.styles';
@@ -8,7 +9,8 @@ export const Searcher = () => {
   const navigate = useNavigate();
 
   const debouncedCallback = (debouncedValue: string) => {
-    if (pathname !== '/') {
+    const isSearchingOnOtherPage = pathname !== '/' && !!debouncedValue;
+    if (isSearchingOnOtherPage) {
       navigate(`/?query=${debouncedValue}`);
     } else {
       const params = { query: debouncedValue };
@@ -21,6 +23,10 @@ export const Searcher = () => {
     delay: 1000,
     debouncedCallback,
   });
+
+  useEffect(() => {
+    setDebouncingValue(searchParams.get('query') || '');
+  }, [searchParams, setDebouncingValue]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
