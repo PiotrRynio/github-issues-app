@@ -1,10 +1,12 @@
-import { useMatch } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useSearchedUsers, useSearchedRepositories } from 'hooks';
 import { ResultsList, Typography } from 'components';
 import { Wrapper, InitialInformationContainer } from './Results.styles';
 
 export const Results = () => {
-  const searchedText = useMatch('/searcher/:searchedText')?.params.searchedText;
+  const [searchParams] = useSearchParams();
+  const searchedText = searchParams.get('query') || '';
+
   const { data: searchedUsersData, isLoading: isSearchedUsersDataLoading } = useSearchedUsers(searchedText);
   const { data: searchedRepositoriesData, isLoading: isSearchedRepositoriesLoading } =
     useSearchedRepositories(searchedText);

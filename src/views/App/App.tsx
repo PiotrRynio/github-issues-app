@@ -10,7 +10,6 @@ export const App = () => {
       <MainSection>
         <Routes>
           <Route path="/users/:githubUserLogin" element={<User />} />
-          <Route path="/searcher/:searchedText" element={<Results />} />
           <Route path="/searcher" element={<Results />} />
           <Route path="/" element={<Navigate replace to="/searcher" />} />
           <Route path="*" element={<NotFound />} />

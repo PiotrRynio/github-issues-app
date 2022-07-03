@@ -1,6 +1,6 @@
 import { useQuery, UseQueryResult } from 'react-query';
 import { RepositoriesSearcherDto } from 'types';
-import { REPOSITORIES_SEARCHER_PATH, REST_API_URL } from 'constants/restApiPaths';
+import { REPOSITORIES_SEARCHER_PATH, REST_API_BASE_URL } from 'constants/restApiPaths';
 import { GITHUB_REST_API_HEADERS } from 'constants/headers';
 
 export type SearchedRepository = {
@@ -26,7 +26,7 @@ export const useSearchedRepositories = (searchedText?: string): UseQueryResult<U
     }
 
     const searchedRepositoriesResponse = await fetch(
-      `${REST_API_URL}${REPOSITORIES_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
+      `${REST_API_BASE_URL}${REPOSITORIES_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
       GITHUB_REST_API_HEADERS,
     );
     if (!searchedRepositoriesResponse.ok) {

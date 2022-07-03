@@ -1,5 +1,5 @@
 import { useQuery, UseQueryResult } from 'react-query';
-import { REST_API_URL, USER_SEARCHER_PATH, USERS_PATH } from 'constants/restApiPaths';
+import { REST_API_BASE_URL, USER_SEARCHER_PATH, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto, UsersSearcherDto } from 'types';
 import { GITHUB_REST_API_HEADERS } from 'constants/headers';
 
@@ -25,7 +25,7 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
     }
 
     const searchedUsersResponse = await fetch(
-      `${REST_API_URL}${USER_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
+      `${REST_API_BASE_URL}${USER_SEARCHER_PATH}?q=${searchedText}&per_page=5`,
       GITHUB_REST_API_HEADERS,
     );
     if (!searchedUsersResponse.ok) {
@@ -35,7 +35,7 @@ export const useSearchedUsers = (searchedText?: string): UseQueryResult<UseSearc
 
     const usersDetails: SearchedUser[] = await Promise.all(
       searchedUsersDto.items.map(async (user) => {
-        const userResponse = await fetch(`${REST_API_URL}${USERS_PATH}/${user.login}`, GITHUB_REST_API_HEADERS);
+        const userResponse = await fetch(`${REST_API_BASE_URL}${USERS_PATH}/${user.login}`, GITHUB_REST_API_HEADERS);
 
         if (!userResponse.ok) {
           await Promise.reject();
