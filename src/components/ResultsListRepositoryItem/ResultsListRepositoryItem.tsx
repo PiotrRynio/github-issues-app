@@ -1,7 +1,8 @@
 import { SearchedRepository } from 'hooks';
 import { BookIcon, StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography } from 'components';
-import { ContentContainer, TitleContainer, Wrapper } from './ResultsListRepositoryItem.styles';
+import { ContentContainer, LanguageColorCircle, TitleContainer, Wrapper } from './ResultsListRepositoryItem.styles';
 import { formattedLastUpdateDate } from 'utils';
+import { PROGRAMMING_LANGUAGE_COLORS } from 'constants/programmingLanguageColor';
 
 export type ResultsListRepositoryItemProps = SearchedRepository;
 
@@ -32,6 +33,7 @@ export const ResultsListRepositoryItem = ({
 
           {!!programmingLanguage && (
             <StatisticsLabel>
+              <LanguageColorCircle languageColor={PROGRAMMING_LANGUAGE_COLORS[programmingLanguage]} />
               <Typography variant="small">{programmingLanguage} </Typography>
             </StatisticsLabel>
           )}

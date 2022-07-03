@@ -1,4 +1,4 @@
-import { ONE_DAY_IN_MILLISECONDS, TWO_WEEKS_IN_MILLISECONDS } from '../../constants';
+import { ONE_DAY_IN_MILLISECONDS, TWO_WEEKS_IN_MILLISECONDS } from 'constants/times';
 
 export const formattedLastUpdateDate = (lastUpdateDate: Date) => {
   // date to ms

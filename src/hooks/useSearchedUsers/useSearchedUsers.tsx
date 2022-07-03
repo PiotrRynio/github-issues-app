@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from 'react-query';
 import { REST_API_URL, USER_SEARCHER_PATH, USERS_PATH } from 'constants/restApiPaths';
 import { UserDto, UsersSearcherDto } from 'types';
-import { GITHUB_REST_API_HEADERS } from '../../constants/headers';
+import { GITHUB_REST_API_HEADERS } from 'constants/headers';
 
 export type SearchedUser = {
   type: 'user';

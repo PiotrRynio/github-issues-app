@@ -21,3 +21,11 @@ export const ContentContainer = styled.div`
   padding: 5px 28px 0;
   gap: 15px;
 `;
+
+export const LanguageColorCircle = styled.div<{ languageColor?: string }>`
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${({ languageColor, theme }) => languageColor || theme.colors.disabled};
+`;
