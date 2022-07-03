@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { User, NotFound, Results } from 'views';
 import { TopBar } from 'components';
 import { MainSection, Wrapper } from './App.styles';
@@ -10,8 +10,7 @@ export const App = () => {
       <MainSection>
         <Routes>
           <Route path="/users/:githubUserLogin" element={<User />} />
-          <Route path="/searcher" element={<Results />} />
-          <Route path="/" element={<Navigate replace to="/searcher" />} />
+          <Route path="/" element={<Results />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainSection>
