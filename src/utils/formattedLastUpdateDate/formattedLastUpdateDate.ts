@@ -16,7 +16,7 @@ export const formattedLastUpdateDate = (lastUpdateDate: Date) => {
   }
 
   if (differenceInMilliseconds < TWO_WEEKS_IN_MILLISECONDS) {
-    return `${millisecondsToDays} days ago`;
+    return `${Math.floor(millisecondsToDays)} days ago`;
   }
 
   return lastUpdateDate.toLocaleDateString('en-GB', {
