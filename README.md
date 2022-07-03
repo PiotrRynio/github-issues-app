@@ -3,8 +3,8 @@
 ## Overview:
 Our app should allow to search Github for users and repositories.
 
-- API URL: [Github REST API(v3)](https://docs.github.com/en/rest)
 - Demo on Netlify: [LINK](https://rynio-github-issues-app.netlify.app/)
+- API URL: [Github REST API(v3)](https://docs.github.com/en/rest)
 - Repo url: [LINK](https://github.com/PiotrRynio/github-issues-app)
 
 ## Running this project locally:
