@@ -9,13 +9,19 @@ export const Searcher = () => {
   const navigate = useNavigate();
 
   const debouncedCallback = (debouncedValue: string) => {
-    const isSearchingOnOtherPage = pathname !== '/' && !!debouncedValue;
+    const isHomePage = pathname === '/';
+    const isSearchingOnOtherPage = !isHomePage && !!debouncedValue;
+
     if (isSearchingOnOtherPage) {
       navigate(`/?query=${debouncedValue}`);
-    } else {
-      const params = { query: debouncedValue };
-      setSearchParams(params);
+      return;
     }
+    if (!isHomePage) {
+      return;
+    }
+
+    const params = { query: debouncedValue };
+    setSearchParams(params);
   };
 
   const { debouncingValue, setDebouncingValue } = useDebounce<string>({
@@ -25,7 +31,9 @@ export const Searcher = () => {
   });
 
   useEffect(() => {
-    setDebouncingValue(searchParams.get('query') || '');
+    if (searchParams.get('query') !== debouncingValue || !debouncingValue) {
+      setDebouncingValue(searchParams.get('query') || '');
+    }
   }, [searchParams, setDebouncingValue]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
