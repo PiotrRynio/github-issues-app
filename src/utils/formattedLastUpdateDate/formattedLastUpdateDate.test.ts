@@ -28,7 +28,7 @@ describe('formattedLastUpdateDate', () => {
 
   it('should return number of days, if the day difference is 1 day', () => {
     // given
-    jest.useFakeTimers().setSystemTime(new Date('2022-05-02'));
+    jest.useFakeTimers().setSystemTime(new Date('2022-05-02T05:01:00.000Z'));
 
     // when
     const result = formattedLastUpdateDate(testDate);
@@ -45,6 +45,6 @@ describe('formattedLastUpdateDate', () => {
     const result = formattedLastUpdateDate(testDate);
 
     // then
-    expect(result).toBe('Today');
+    expect(result).toBe('today');
   });
 });
