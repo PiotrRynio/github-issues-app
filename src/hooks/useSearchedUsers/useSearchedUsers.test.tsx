@@ -17,6 +17,9 @@ describe('Hook useSearchedUsers', () => {
   };
 
   it(`should render hook`, async () => {
+    // given
+    getUsersSearcherWillReturn(usersSearcherResponse);
+
     // when
     renderHook(() => useSearchedUsers(searchedText));
   });

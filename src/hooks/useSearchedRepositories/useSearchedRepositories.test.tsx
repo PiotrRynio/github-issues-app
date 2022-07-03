@@ -19,6 +19,9 @@ describe('Hook useSearchedRepositories', () => {
   };
 
   it(`should render hook`, async () => {
+    // given
+    getRepositoriesSearcherWillReturn(repositoriesSearcherResponse);
+
     // when
     renderHook(() => useSearchedRepositories(searchedText));
   });
