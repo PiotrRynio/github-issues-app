@@ -1,5 +1,4 @@
-# React 17 template + styled-components + useQuery + MSW
- 
+# Github Issues App
 
 ## Overview:
 Our app should allow to search Github for users and repositories.
