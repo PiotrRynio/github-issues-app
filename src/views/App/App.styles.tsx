@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   position: relative;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   align-items: center;
 `;
