@@ -42,7 +42,7 @@ export const User = () => {
       </TitlesContainer>
       <StatisticsLabelContainer isLongerGap>
         <StatisticsLabel>
-          <UsersIcon ariaLabel="followers" typographyVariant="small" height={16} width={16} />
+          <UsersIcon ariaLabel="followers" height={16} width={16} />
           <Typography variant="small">{followersNumber} </Typography>
           <Typography variant="small"> Followers</Typography>
         </StatisticsLabel>
@@ -53,7 +53,7 @@ export const User = () => {
         </StatisticsLabel>
 
         <StatisticsLabel>
-          <StarIcon ariaLabel="star" typographyVariant="small" height={15} width={15} />
+          <StarIcon ariaLabel="star" height={15} width={15} />
           <Typography variant="small">{starsNumber} </Typography>
         </StatisticsLabel>
       </StatisticsLabelContainer>

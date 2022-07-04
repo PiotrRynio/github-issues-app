@@ -18,7 +18,7 @@ export const ResultsListRepositoryItem = ({
   return (
     <Wrapper>
       <TitleContainer>
-        <BookIcon ariaLabel="book" typographyVariant="itemTitle" />
+        <BookIcon ariaLabel="book" />
         <Typography variant="itemTitle">{name}</Typography>
       </TitleContainer>
 
@@ -27,7 +27,7 @@ export const ResultsListRepositoryItem = ({
 
         <StatisticsLabelContainer>
           <StatisticsLabel>
-            <StarIcon ariaLabel="star" typographyVariant="small" />
+            <StarIcon ariaLabel="star" />
             <Typography variant="small">{starsNumber} </Typography>
           </StatisticsLabel>
 
