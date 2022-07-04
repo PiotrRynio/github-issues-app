@@ -1,7 +1,6 @@
 import { ONE_DAY_IN_MILLISECONDS, TWO_WEEKS_IN_MILLISECONDS } from 'constants/times';
 
 export const formattedLastUpdateDate = (lastUpdateDate: Date) => {
-  // date to ms
   const lastUpdateDateInMilliseconds = lastUpdateDate.getTime();
   const DateNowInMilliseconds = Date.now();
   const differenceInMilliseconds = DateNowInMilliseconds - lastUpdateDateInMilliseconds;
