@@ -1,9 +1,16 @@
 import { useSearchParams } from 'react-router-dom';
-import { useSearchedUsers, useSearchedRepositories } from 'hooks';
+import { useSearchedUsers, useSearchedRepositories, usePageTitle } from 'hooks';
 import { ResultsList, Typography } from 'components';
+import { APP_NAME } from 'constants/names';
 import { Wrapper, InitialInformationContainer } from './Results.styles';
+import { useEffect } from 'react';
 
 export const Results = () => {
+  const { setPageTitle } = usePageTitle();
+  useEffect(() => {
+    setPageTitle(`Searcher | ${APP_NAME}`);
+  }, [setPageTitle]);
+
   const [searchParams] = useSearchParams();
   const searchedText = searchParams.get('query') || '';
 

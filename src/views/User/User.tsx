@@ -1,10 +1,17 @@
+import { useEffect } from 'react';
 import { useMatch } from 'react-router-dom';
-import { useGithubUser } from 'hooks/useGithubUser';
+import { usePageTitle, useGithubUser } from 'hooks';
 import { Avatar, StarIcon, StatisticsLabel, StatisticsLabelContainer, Typography, UsersIcon } from 'components';
+import { APP_NAME } from 'constants/names';
 import { TitlesContainer, Wrapper } from './User.styles';
 
 export const User = () => {
   const githubUserLogin = useMatch('/users/:githubUserLogin')?.params.githubUserLogin;
+
+  const { setPageTitle } = usePageTitle();
+  useEffect(() => {
+    setPageTitle(`${githubUserLogin} | ${APP_NAME}`);
+  }, [githubUserLogin, setPageTitle]);
 
   const { data, isLoading, isError } = useGithubUser(githubUserLogin);
 
