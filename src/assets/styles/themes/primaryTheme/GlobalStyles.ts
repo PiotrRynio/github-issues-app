@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   } 
   
   body {
+    background-color: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fontFamilies.primary};
   }
    

@@ -6,7 +6,6 @@ export const Wrapper = styled.section`
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const MainSection = styled.section`
